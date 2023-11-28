@@ -38,7 +38,7 @@
           }
 
           ACRadio   =    document.getElementById("A/C");
-          ParkingRadio = document.getElementById("Parking");
+          parkingRadio = document.getElementById("parking");
          
           if(ACRadio.checked){
             facilitiesName = ACRadio.value + "<br>";
@@ -47,15 +47,16 @@
             
 
           }
-          if(ParkingRadio.checked){
-            facilitiesName += ParkingRadio.value + "<br>";
-            facilitiesCost = 150;
-            TotalCost = RoomCost + facilitiesCost;
+          if(parkingRadio.checked){
+            parkingName = parkingRadio.value + "<br>";
+            parkingCost = 150;
+            TotalCost = RoomCost + facilitiesCost + parkingCost;
           }
           
         
           document.getElementById("lblRoom").innerHTML =RoomCost;
           document.getElementById("lblfacilities").innerHTML =facilitiesCost;
+          document.getElementById("lblparking").innerHTML = parkingCost;
           document.getElementById("lblTotal").innerHTML=TotalCost;
         }
           function LoadPage(pageUrl){
@@ -190,7 +191,7 @@
                                 <h2>Parking</h2>
                             </div>
                             <div class="card-footer">
-                                <h3><input type="radio" id="Parking" Name="Facilities" class="form-check-input"> &#8377;150</h3>
+                                <h3><input type="radio" id="parking" Name="parking" class="form-check-input"> &#8377;150</h3>
                             </div>
                         </div>
                     </div>
@@ -222,6 +223,8 @@
                             <dd class="col-8" id="lblRoom"></dd>
                             <dt class="col-4">Facilities Price</dt>
                             <dd class="col-8" id="lblfacilities"></dd>
+                            <dt class="col-4">Prking price</dt>
+                            <dd class="col-8" id="lblparking"></dd>
                             <dt class="col-4">Total</dt>
                             <dd class="col-8" id="lblTotal"></dd>
                         </dl>
